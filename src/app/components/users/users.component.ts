@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-users',
@@ -10,6 +11,7 @@ export class UsersComponent implements OnInit {
   name: string;
   email: string;
   address: address;
+  environment: any;
   
   constructor() { }
 
@@ -22,6 +24,7 @@ export class UsersComponent implements OnInit {
       state: 'NY',
       zipcode: 10001
     };
+    this.environment = environment;
   }
 
 }
