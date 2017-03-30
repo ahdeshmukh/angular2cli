@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { UtilityService } from '../../services/utility/utility.service';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
+  providers: [UtilityService]
 })
 export class UsersComponent implements OnInit {
 
@@ -13,7 +14,7 @@ export class UsersComponent implements OnInit {
   address: address;
   environment: any;
   
-  constructor() { }
+  constructor(private utilityService: UtilityService) { }
 
   ngOnInit() {
     this.name = 'John Doe';
@@ -24,7 +25,7 @@ export class UsersComponent implements OnInit {
       state: 'NY',
       zipcode: 10001
     };
-    this.environment = environment;
+    this.environment = this.utilityService.getEnvironmentInfo();
   }
 
 }
