@@ -8,7 +8,18 @@ export class UtilityService {
   constructor() { }
 
   getEnvironmentInfo() {
-    return environment;
+    return environment; // name of the constant in environment.*.ts files
+  }
+
+  getBasePath() {
+    let environment = this.getEnvironmentInfo();
+    return environment.protocol+'://'+environment.hostname;
+  }
+
+  getImagesBasePath() {
+    let basePath = this.getBasePath();
+    let environment = this.getEnvironmentInfo();
+    return basePath+'/'+environment.assets+'/'+environment.images;
   }
 
 }

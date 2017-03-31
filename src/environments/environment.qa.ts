@@ -5,5 +5,9 @@
 
 export const environment = {
   production: false,
-  name: 'QA'
+  name: 'QA',
+  protocol: 'http',
+  hostname: 'angular2cli.qa',
+  assets: 'assets',
+  images: 'images'
 };

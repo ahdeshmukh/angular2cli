@@ -5,5 +5,9 @@
 
 export const environment = {
   production: false,
-  name: 'DEV'
+  name: 'DEV',
+  protocol: 'http',
+  hostname: 'angular2cli.local',
+  assets: 'assets',
+  images: 'images'
 };
