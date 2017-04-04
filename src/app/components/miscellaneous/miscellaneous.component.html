@@ -1,6 +1,16 @@
 <article>
   <div class="container">
-    <button (click)="show = !show">{{show ? 'hide' : 'show'}} text</button>
-    <p *ngIf="show" [style.color]="'blue'">Angular2 is awesome</p>
+    <div>
+      <h3>Simple Toggle</h3>
+      <button (click)="show = !show">{{show ? 'hide' : 'show'}} text</button>
+      <div *ngIf="show" [style.color]="'blue'">Angular2 is awesome</div>
+    </div>
+    <hr/>
+    <div>
+      <h3>Simple Highlight</h3>
+      <!-- https://angular.io/docs/ts/latest/guide/attribute-directives.html# -->
+      <p myHighlight>Highlight me!</p>
+    </div>
+    <hr/>
   </div>
 </article>
