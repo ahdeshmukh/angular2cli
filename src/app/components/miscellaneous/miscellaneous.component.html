@@ -1,0 +1,6 @@
+<article>
+  <div class="container">
+    <button (click)="show = !show">{{show ? 'hide' : 'show'}} text</button>
+    <p *ngIf="show" [style.color]="'blue'">Angular2 is awesome</p>
+  </div>
+</article>
