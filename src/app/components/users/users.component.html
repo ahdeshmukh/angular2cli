@@ -3,15 +3,15 @@
   <div>Protocol: {{environment.protocol}}</div>
   <div>Hostname: {{environment.hostname}}</div>-->
   <div class="container">
-    <div *ngFor="let user of users" class="row" style="margin:30px 0;" >
-      <div class="col-sm-2">
-        <img class="img-responsive img-circle" [src]="user.picture.large" />
-      </div>
-      <div class="col-sm-10">
-        <div class="h2">{{user.name.first + ' ' + user.name.last}}</div>
-        <div class="h4">{{user.email}}</div>
-        <div>{{user.location.street}},</div>
-        <div>{{user.location.city}}, {{user.location.state}}, {{user.location.postcode}}</div>
+    <div class="row" style="margin:30px 0;" >
+      <div *ngFor="let user of users" class="col-sm-4" style="margin:20px 0;" >
+        <div><img class="img-responsive img-circle" [src]="user.picture.large" /></div>
+        <div>
+          <div class="h2">{{user.name.first + ' ' + user.name.last}}</div>
+          <div class="h4">{{user.email}}</div>
+          <div>{{user.location.street}},</div>
+          <div>{{user.location.city}}, {{user.location.state}}, {{user.location.postcode}}</div>
+        </div>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserService {
 
-  private usersUrl = 'https://randomuser.me/api/?results=5&nat=us';
+  private usersUrl = 'https://randomuser.me/api/?results=10&nat=us';
   
   constructor(private http: Http) { }
 
