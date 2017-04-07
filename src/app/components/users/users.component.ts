@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit {
     this.environment = this.utilityService.getEnvironmentInfo();
     
     this.userService.getUsers()
-      .subscribe(respUsers => this.users = respUsers.results);
+      .subscribe(respUsers => this.users = respUsers);
   }
 
 }
