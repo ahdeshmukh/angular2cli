@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <h3>Simple Toggle</h3>
-      <button (click)="show = !show">{{show ? 'hide' : 'show'}} text</button>
+      <button class="btn btn-primary" (click)="show = !show">{{show ? 'hide' : 'show'}} text</button>
       <div *ngIf="show" [style.color]="'blue'">Angular2 is awesome</div>
     </div>
     <hr/>
