@@ -8,10 +8,14 @@ header {
 
 /* All a tags inside header */
 header a {
-    /*color: #ffffff;*/
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 20px;
+}
+@media (max-width:481px) {
+    header a {
+        font-size: 14px;
+    }
 }
 
 .header-highlight {
@@ -27,5 +31,15 @@ h1.header-branding {
 }
 
 .navbar-active-link {
-   color: #e8491d !important; 
+   color: #e8491d !important;
+   font-weight: bold;
+}
+
+@media (max-width:481px) {
+    header a {
+        font-size: 14px;
+    }
+    h1.header-branding {
+        font-size: 26px;
+    }
 }
