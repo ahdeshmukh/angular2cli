@@ -1,5 +1,6 @@
 {
   "projects": {
-    "angular2cli-f651c": "angular2cli-f651c"
+    "angular2cli-f651c": "angular2cli-f651c",
+    "default": "angular2cli-f651c"
   }
 }
