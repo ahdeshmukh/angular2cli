@@ -12,14 +12,19 @@ export class UtilityService {
   }
 
   getBasePath() {
-    let environment = this.getEnvironmentInfo();
-    return environment.protocol+'://'+environment.hostname;
+    let env = this.getEnvironmentInfo();
+    return env.protocol+'://'+env.hostname;
   }
 
   getImagesBasePath() {
     let basePath = this.getBasePath();
-    let environment = this.getEnvironmentInfo();
-    return basePath+'/'+environment.assets+'/'+environment.images;
+    let env = this.getEnvironmentInfo();
+    return basePath+'/'+env.assets+'/'+env.images;
+  }
+
+  isProductionEnv() {
+    let env = this.getEnvironmentInfo();
+    return (env.name === 'PROD');
   }
 
 }
