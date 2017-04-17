@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { MiscellaneousComponent } from './components/miscellaneous/miscellaneous.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { AuthenticationComponent } from './components/authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     FooterComponent,
     AboutComponent,
     MiscellaneousComponent,
-    HighlightDirective
+    HighlightDirective,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,

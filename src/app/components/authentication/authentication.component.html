@@ -1,0 +1,8 @@
+<div class="authentication-login-container">
+  <div *ngIf=!isUserLoggedIn() class="authentication-login-button">
+    <button (click)="login()" type="button" class="btn btn-secondary">Log In</button>
+  </div>
+  <div *ngIf=isUserLoggedIn() class="authentication-login-circle">
+    <span class="authentication-login-circle-text">A</span>
+  </div>
+</div>

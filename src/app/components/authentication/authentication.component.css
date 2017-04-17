@@ -1,0 +1,21 @@
+.authentication-login-container {
+    padding: 5px;
+}
+
+.authentication-login-circle {
+    background-color: #00ccff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+}
+
+.authentication-login-circle-text {
+    color: #fff;
+    font-size: 20px;  
+}
+
+.authentication-login-button {
+    margin-top: 5px;
+}

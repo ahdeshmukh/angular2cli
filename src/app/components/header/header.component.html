@@ -16,6 +16,7 @@
           <li><a routerLink="users" routerLinkActive="navbar-active-link">Users</a></li>
           <li><a routerLink="about" routerLinkActive="navbar-active-link">About</a></li>
           <li *ngIf=!isProductionEnv() ><a routerLink="miscellaneous" routerLinkActive="navbar-active-link">Miscellaneous</a></li>
+          <li><app-authentication></app-authentication></li>
         </ul>
       </div>
     </div>
