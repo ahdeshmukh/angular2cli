@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ModalModule } from 'ng2-bootstrap/modal';
 
 import { routes } from './app.router';
 
@@ -31,7 +32,8 @@ import { AuthenticationComponent } from './components/authentication/authenticat
     BrowserModule,
     FormsModule,
     HttpModule,
-    routes
+    routes,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

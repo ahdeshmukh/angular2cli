@@ -1,6 +1,37 @@
 <div class="authentication-login-container">
   <div *ngIf=!isUserLoggedIn() class="authentication-login-button">
-    <button (click)="login()" type="button" class="btn btn-secondary">Log In</button>
+    <!--<button (click)="login()" type="button" class="btn btn-secondary">Log In</button>-->
+    <button class="btn btn-primary" (click)="smModal.show()">LOGIN</button>
+    <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title pull-left">LOGIN</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div>
+                Since this is a demo site for learning Angular2, I have not implemented real login using database.
+                Select a role and click login button. A local storage user object will be created.
+              </div>
+              <div class="form-group radio">
+                <label><input type="radio" name="loginRadio">Admin</label>
+              </div>
+              <div class="form-group radio">
+                <label><input type="radio" name="loginRadio">Authenticated User</label>
+              </div>
+              <div>
+                <button type="button" class="btn btn-success" (click)="login()">LOGIN</button>
+                <button type="button" class="btn btn-danger" (click)="smModal.hide()">CANCEL</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div *ngIf=isUserLoggedIn() class="authentication-login-circle">
     <span class="authentication-login-circle-text">A</span>

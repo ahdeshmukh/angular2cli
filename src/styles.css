@@ -6,3 +6,9 @@ article {
 .float-left {
     float: left;
 }
+
+.modal-backdrop {
+    /* https://weblog.west-wind.com/posts/2016/Sep/14/Bootstrap-Modal-Dialog-showing-under-Modal-Background */
+    /* display: none; also works but it removes the black overlay */
+    z-index: 999 !important; /* this works */
+}
