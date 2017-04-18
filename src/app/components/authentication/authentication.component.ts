@@ -12,10 +12,11 @@ export class AuthenticationComponent implements OnInit {
   ngOnInit() {
   }
 
-  login() {
-    let currentUser: any;
+  login(formValue: any) {
+    console.log(formValue);
+    /*let currentUser: any;
     currentUser = {"firstName": "Amit", "lastName": "Deshmukh", "email": "amit.deshmukh@example.com", "role":["admin"]};
-    localStorage.setItem('currentUser', currentUser);
+    localStorage.setItem('currentUser', currentUser);*/
   }
 
   isUserLoggedIn() {
