@@ -13,10 +13,9 @@ export class AuthenticationComponent implements OnInit {
   }
 
   login(formValue: any) {
-    console.log(formValue);
-    /*let currentUser: any;
-    currentUser = {"firstName": "Amit", "lastName": "Deshmukh", "email": "amit.deshmukh@example.com", "role":["admin"]};
-    localStorage.setItem('currentUser', currentUser);*/
+    let currentUser: any;
+    currentUser = {"firstName": formValue.firstName, "lastName": formValue.lastName, "role": formValue.userRole};
+    localStorage.setItem('currentUser', currentUser);
   }
 
   isUserLoggedIn() {
