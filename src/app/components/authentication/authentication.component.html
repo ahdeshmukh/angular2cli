@@ -1,8 +1,8 @@
 <div class="authentication-login-container">
   <div *ngIf=!isUserLoggedIn() class="authentication-login-button">
     <!--<button (click)="login()" type="button" class="btn btn-secondary">Log In</button>-->
-    <button class="btn btn-primary" (click)="smModal.show()">LOGIN</button>
-    <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <button class="btn btn-primary" (click)="showLoginModal()">LOGIN</button>
+    <div bsModal #loginModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
@@ -33,7 +33,7 @@
               </div>
               <div>
                 <button type="submit" class="btn btn-success">LOGIN</button>
-                <button type="button" class="btn btn-danger" (click)="smModal.hide()">CANCEL</button>
+                <button type="button" class="btn btn-danger" (click)="hideLoginModal()">CANCEL</button>
               </div>
             </form>
           </div>

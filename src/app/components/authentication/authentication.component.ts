@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ng2-bootstrap/modal';
 
 @Component({
   selector: 'app-authentication',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthenticationComponent implements OnInit {
 
+  @ViewChild('loginModal') public loginModal:ModalDirective;
+  
   constructor() { }
 
   ngOnInit() {
@@ -16,6 +19,7 @@ export class AuthenticationComponent implements OnInit {
     let currentUser: any;
     currentUser = {"firstName": formValue.firstName, "lastName": formValue.lastName, "role": formValue.userRole};
     localStorage.setItem('currentUser', currentUser);
+    //this.hideLoginModal();
   }
 
   isUserLoggedIn() {
@@ -24,6 +28,14 @@ export class AuthenticationComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  showLoginModal():void {
+    this.loginModal.show();
+  }
+
+  hideLoginModal():void {
+    this.loginModal.hide();
   }
 
 }
