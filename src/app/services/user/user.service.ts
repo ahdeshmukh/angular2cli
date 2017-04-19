@@ -8,12 +8,22 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class UserService {
 
-  private usersUrl = 'https://randomuser.me/api/?results=10&nat=us';
+  private randomUserUrl = 'https://randomuser.me/api/?nat=us';
   
   constructor(private http: Http) { }
 
-  getUsers() {
-    return this.http.get(this.usersUrl)
+  getUsers(limit = null, gender = null) {
+    if(limit != "undefined" && limit != "null") {
+      limit = 10;
+    }
+    let randomUserUrl: string;
+    randomUserUrl = this.randomUserUrl + '&results='+limit;
+    
+    if(gender != "undefined" && gender != "null") {
+      randomUserUrl += '&gender='+gender;
+    }
+    
+    return this.http.get(randomUserUrl)
       .map((response: Response) => response.json())
       .map(response => response.results)
       .catch(this.errorHandler);
