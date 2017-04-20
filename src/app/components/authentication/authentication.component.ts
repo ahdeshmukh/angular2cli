@@ -11,6 +11,7 @@ import { UserService } from '../../services/user/user.service';
 export class AuthenticationComponent implements OnInit {
 
   @ViewChild('loginModal') public loginModal:ModalDirective;
+  @ViewChild('accountModal') public accountModal:ModalDirective;
   
   constructor(private userService: UserService) { }
 
@@ -36,6 +37,10 @@ export class AuthenticationComponent implements OnInit {
     //this.hideLoginModal();
   }
 
+  logOut() {
+    localStorage.removeItem('currentUser');
+  }
+
   isUserLoggedIn() {
     let currentUser: any = localStorage.getItem('currentUser');
     if(currentUser && currentUser != "undefined" && currentUser != "null") {
@@ -50,6 +55,10 @@ export class AuthenticationComponent implements OnInit {
 
   hideLoginModal():void {
     this.loginModal.hide();
+  }
+
+  showAccountModal():void {
+    this.accountModal.show();
   }
 
 }

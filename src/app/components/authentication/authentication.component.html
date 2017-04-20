@@ -33,7 +33,25 @@
       </div>
     </div>
   </div>
-  <div *ngIf=isUserLoggedIn() class="authentication-login-circle">
-    <span class="authentication-login-circle-text">A</span>
+  <div *ngIf=isUserLoggedIn()>
+    <button type="button" class="btn btn-primary authentication-account-btn-circle" (click)="showAccountModal()">
+      <span class="authentication-login-circle-text">A</span>
+    </button>
+    <div bsModal #accountModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title pull-left">ACCOUNT</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="hideAccountModal()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>Sarah Fraser</div>
+            <button type="button" class="btn btn-danger" (click)="logOut()">LOG OUT</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -19,3 +19,15 @@
 .authentication-login-button {
     margin-top: 5px;
 }
+
+.authentication-account-btn-circle {
+    background-color: #00ccff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1;
+}
+.authentication-account-btn-circle:focus {
+   outline: 0; 
+}
