@@ -1,52 +1,34 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'ng2-bootstrap/modal';
 import { UserService } from '../../services/user/user.service';
+import { AuthenticationService } from '../../services/authentication/authentication.service';
 
 @Component({
   selector: 'app-authentication',
   templateUrl: './authentication.component.html',
   styleUrls: ['./authentication.component.css'],
-  providers: [UserService]
+  providers: [UserService, AuthenticationService]
 })
 export class AuthenticationComponent implements OnInit {
 
   @ViewChild('loginModal') public loginModal:ModalDirective;
   @ViewChild('accountModal') public accountModal:ModalDirective;
   
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
   }
 
   login(formValue: any) {
-    let currentUser: any;
-    let firstName: string, lastName: string;
-
-    if(formValue.userRole === 'admin') {
-      firstName = 'Admin';
-      lastName = 'User';
-    } else {
-      let user: any;
-      this.userService.getUsers(1)
-      .subscribe(respUser => user = respUser);
-    }
-    
-    currentUser = {"firstName": "Admin", "lastName": "User", "role": formValue.userRole};
-
-    localStorage.setItem('currentUser', currentUser);
-    //this.hideLoginModal();
+    this.authenticationService.login(formValue);
   }
 
-  logOut() {
-    localStorage.removeItem('currentUser');
+  logout() {
+    this.authenticationService.logout();
   }
 
-  isUserLoggedIn() {
-    let currentUser: any = localStorage.getItem('currentUser');
-    if(currentUser && currentUser != "undefined" && currentUser != "null") {
-      return true;
-    }
-    return false;
+  isUserLoggedIn():boolean {
+    return this.authenticationService.isUserLoggedIn();
   }
 
   showLoginModal():void {
