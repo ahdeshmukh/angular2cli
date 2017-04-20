@@ -12,3 +12,7 @@ article {
     /* display: none; also works but it removes the black overlay */
     z-index: 999 !important; /* this works */
 }
+
+.clearfix {
+    overflow: auto;
+}

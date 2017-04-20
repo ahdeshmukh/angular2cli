@@ -43,4 +43,8 @@ export class AuthenticationComponent implements OnInit {
     this.accountModal.show();
   }
 
+  hideAccountModal():void {
+    this.accountModal.hide();
+  }
+
 }

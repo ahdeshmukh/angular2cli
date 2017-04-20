@@ -37,4 +37,8 @@ export class AuthenticationService {
     return false;
   }
 
+  getCurrentLoggedInuser() {
+    return localStorage.getItem('currentUser');
+  }
+
 }
