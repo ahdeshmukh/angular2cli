@@ -8,10 +8,10 @@ export class AuthenticationService {
 
   login(userCredentials: any) {
     
+    let currentUser: any;
+    let firstName: string, lastName: string;
+    
     setTimeout(() => {
-      let currentUser: any;
-      let firstName: string, lastName: string;
-
       if(userCredentials.userRole === 'admin') {
         firstName = 'Admin';
         lastName = 'User';
@@ -24,7 +24,7 @@ export class AuthenticationService {
       currentUser = {"firstName": "Admin", "lastName": "User", "role": userCredentials.userRole};
       
       localStorage.setItem('currentUser', currentUser);
-    }, 4000);
+    }, 3000);
 
   }
 
