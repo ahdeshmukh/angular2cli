@@ -47,4 +47,9 @@ export class AuthenticationComponent implements OnInit {
     this.accountModal.hide();
   }
 
+  observableExample() {
+    this.authenticationService.observableExample().subscribe(value => console.log('in component ' + value));
+    //console.log('from component ' + xyz);
+  }
+
 }

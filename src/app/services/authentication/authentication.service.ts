@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserService } from '../../services/user/user.service';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthenticationService {
@@ -42,6 +43,20 @@ export class AuthenticationService {
 
   getCurrentLoggedInuser() {
     return localStorage.getItem('currentUser');
+  }
+
+  observableExample() {
+    let observable$ = new Observable(observer => {
+      setTimeout(() => {
+        observer.next(new Date());
+      }, 3000)
+    });
+    observable$.subscribe(
+      value => value,
+      err => {},
+      () => console.log('this is the end')
+    );
+    return observable$;
   }
 
 }
