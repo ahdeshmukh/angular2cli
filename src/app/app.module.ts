@@ -3,8 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ng2-bootstrap/modal';
+import { Routes, RouterModule } from '@angular/router';
 
-import { routes } from './app.router';
+import { AuthguardService } from './services/authguard/authguard.service';
+import { AuthenticationService } from './services/authentication/authentication.service';
+import { UserService } from './services/user/user.service';
+//import { routes } from './app.router';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -16,6 +20,7 @@ import { MiscellaneousComponent } from './components/miscellaneous/miscellaneous
 import { HighlightDirective } from './directives/highlight.directive';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -34,10 +39,18 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routes,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    RouterModule.forRoot([
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+      {path: 'home', component: HomeComponent},
+      {path: 'users', component: UsersComponent},
+      {path: 'about', component: AboutComponent},
+      {path: 'miscellaneous', component: MiscellaneousComponent},
+      {path: 'dashboard', component: DashboardComponent, canActivate:[AuthguardService], data:{roles:['admin']}},
+      {path: '**', component: HomeComponent} // if route not found, default to Home page. in future create a page not found component
+    ])
   ],
-  providers: [],
+  providers: [AuthguardService, AuthenticationService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

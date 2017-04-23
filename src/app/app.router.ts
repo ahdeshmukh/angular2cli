@@ -1,4 +1,4 @@
-import { ModuleWithProviders } from '@angular/core';
+/*import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -18,4 +18,4 @@ export const router: Routes = [
     {path: '**', component: HomeComponent} // if route not found, default to Home page. in future create a page not found component
 ];
 
-export const routes: ModuleWithProviders = RouterModule.forRoot(router);
+export const routes: ModuleWithProviders = RouterModule.forRoot(router);*/
