@@ -19,6 +19,7 @@
               <span *ngIf="!isAdmin()">Friends</span>
             </a>
           </li>
+          <li *ngIf="isAdmin()"><a routerLink="dashboard" routerLinkActive="navbar-active-link">Dashboard</a></li>
           <li><a routerLink="about" routerLinkActive="navbar-active-link">About</a></li>
           <li *ngIf=!isProductionEnv() ><a routerLink="miscellaneous" routerLinkActive="navbar-active-link">Miscellaneous</a></li>
           <li><app-authentication></app-authentication></li>

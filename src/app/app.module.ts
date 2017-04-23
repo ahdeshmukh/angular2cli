@@ -15,6 +15,7 @@ import { AboutComponent } from './components/about/about.component';
 import { MiscellaneousComponent } from './components/miscellaneous/miscellaneous.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthenticationComponent } from './components/authentication/authenticat
     AboutComponent,
     MiscellaneousComponent,
     HighlightDirective,
-    AuthenticationComponent
+    AuthenticationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

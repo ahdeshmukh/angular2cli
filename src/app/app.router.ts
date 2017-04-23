@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { AboutComponent } from './components/about/about.component';
 import { MiscellaneousComponent } from './components/miscellaneous/miscellaneous.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 export const router: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +14,7 @@ export const router: Routes = [
     {path: 'users', component: UsersComponent},
     {path: 'about', component: AboutComponent},
     {path: 'miscellaneous', component: MiscellaneousComponent},
+    {path: 'dashboard', component: DashboardComponent},
     {path: '**', component: HomeComponent} // if route not found, default to Home page. in future create a page not found component
 ];
 
