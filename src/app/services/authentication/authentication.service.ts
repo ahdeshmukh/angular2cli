@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { UserService } from '../../services/user/user.service';
 import { Observable } from 'rxjs/Observable';
+import {Router} from '@angular/router';
+
+import { UserService } from '../../services/user/user.service';
 
 @Injectable()
 export class AuthenticationService {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   login(userCredentials: any) {
     
@@ -57,6 +59,7 @@ export class AuthenticationService {
 
   logout() {
     localStorage.removeItem('currentUser');
+    this.router.navigate(['/home']);
   }
 
   isUserLoggedIn():boolean {
