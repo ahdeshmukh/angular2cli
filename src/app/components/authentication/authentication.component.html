@@ -23,9 +23,13 @@
               <div class="form-group radio">
                 <label><input type="radio" name="userRole" value="authenticated" ngModel required #userRoleControl="ngModel">Authenticated User</label>
               </div>
-              <div>
-                <button [disabled]="userRoleControl.errors" type="submit" class="btn btn-success">LOGIN</button>
-                <button type="button" class="btn btn-danger" (click)="hideLoginModal()">CANCEL</button>
+              <div *ngIf="!isLoginInProgress">
+                <!--<button [disabled]="(userRoleControl.errors || isLoginInProgress)" type="button" (click)="loginForm.ngSubmit.emit()" class="btn btn-success">LOGIN</button>-->
+                <button [disabled]="(userRoleControl.errors || isLoginInProgress)" type="submit" class="btn btn-success">LOGIN</button>
+                <button [disabled]="isLoginInProgress" type="button" class="btn btn-danger" (click)="hideLoginModal()">CANCEL</button>
+              </div>
+              <div *ngIf="isLoginInProgress" class="clearfix">
+                <img class="img-responsive" [src]="imagesPath + '/ajax-loader.gif'" />
               </div>
             </form>
           </div>
