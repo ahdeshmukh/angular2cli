@@ -13,7 +13,12 @@
       <div class="collapse navbar-collapse" [ngClass]="{ 'in': isIn }">
         <ul class="nav navbar-nav navbar-right">
           <li><a routerLink="home" routerLinkActive="navbar-active-link">Home</a></li>
-          <li><a routerLink="users" routerLinkActive="navbar-active-link">Users</a></li>
+          <li *ngIf="isUserLoggedIn()">
+            <a routerLink="users" routerLinkActive="navbar-active-link">
+              <span *ngIf="isAdmin()">Users</span>
+              <span *ngIf="!isAdmin()">Friends</span>
+            </a>
+          </li>
           <li><a routerLink="about" routerLinkActive="navbar-active-link">About</a></li>
           <li *ngIf=!isProductionEnv() ><a routerLink="miscellaneous" routerLinkActive="navbar-active-link">Miscellaneous</a></li>
           <li><app-authentication></app-authentication></li>

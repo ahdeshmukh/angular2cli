@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../../services/utility/utility.service';
+import { AuthenticationService } from '../../services/authentication/authentication.service';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  providers: [UtilityService]
+  providers: [UtilityService, AuthenticationService, UserService]
 })
 export class HeaderComponent implements OnInit {
 
   isIn: boolean
-  constructor(private utilityService: UtilityService) { 
+  constructor(private utilityService: UtilityService, private authenticationService: AuthenticationService) { 
     this.isIn = false;
   }
 
@@ -23,6 +25,14 @@ export class HeaderComponent implements OnInit {
 
   isProductionEnv() {
     return this.utilityService.isProductionEnv();
+  }
+
+  isUserLoggedIn():boolean {
+    return this.authenticationService.isUserLoggedIn();
+  }
+
+  isAdmin():boolean {
+    return this.authenticationService.isAdmin();
   }
 
 }
