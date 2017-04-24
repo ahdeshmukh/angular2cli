@@ -1,0 +1,78 @@
+.dashboard {
+    margin: 10px 0 20px 0;
+}
+
+/*.dashboard-rectangle {
+    width: 230px;
+    height: 125px;
+}
+@media (max-width:481px) {
+    .dashboard-rectangle {
+        width: 160px;
+        height: 90px;
+        margin: 10px 0;
+    }
+}*/
+
+.dashboard-rectangle {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
+@media (max-width:781px) {
+    .dashboard-rectangle {
+        margin: 10px 0;
+    }
+}
+.dashboard-rectangle:after{
+    content: "";
+    display: block;
+}
+
+.dashboard-rectangle-main-info-text {
+    font-size: 30px;
+}
+
+.dashboard-rectangle-primary-text {
+    font-size: 13px;
+}
+
+.dashboard-rectangle-secondary-text {
+    font-size: 11px;
+}
+
+.dashboard-rectangle-green-font {
+    color: #076d04;
+}
+
+.dashboard-rectangle-blue-font {
+    color: #0c0ead;
+}
+
+.dashboard-rectangle-orange-font {
+    color: #e26014;
+}
+
+.dashboard-rectangle-red-font {
+    color: #c90c0c;
+}
+
+.dashboard-rectangle-glyphicon {
+    font-size: 50px;
+}
+
+.dashboard-rectangle-user-glyphicon {
+    color:#88ce73;
+}
+
+.dashboard-rectangle-globe-glyphicon {
+    color:#85cff2;
+}
+
+.dashboard-rectangle-usd-glyphicon {
+    color: #FFA550;
+}
+
+.dashboard-rectangle-stats-glyphicon {
+    color: #f4a4a4;
+}

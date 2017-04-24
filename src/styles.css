@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #EFEFEF !important;
+}
+
 article {
     margin: 20px 0;
 }
@@ -14,5 +18,8 @@ article {
 }
 
 .clearfix {
-    overflow: auto;
+    overflow: hidden;
+}
+.white-font {
+    color: #ffffff;
 }
