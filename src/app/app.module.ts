@@ -43,7 +43,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     RouterModule.forRoot([
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
-      {path: 'users', component: UsersComponent},
+      {path: 'users', component: UsersComponent, canActivate:[AuthguardService], data:{roles:['admin', 'authenticated']}},
       {path: 'about', component: AboutComponent},
       {path: 'miscellaneous', component: MiscellaneousComponent},
       {path: 'dashboard', component: DashboardComponent, canActivate:[AuthguardService], data:{roles:['admin']}},
