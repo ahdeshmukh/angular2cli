@@ -1,8 +1,7 @@
 .about {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
-.about-block {
-    margin: 20px 0;
-    padding: 5px 10px;
+.about-panel-heading {
+    background-color: #f4724b;
 }
