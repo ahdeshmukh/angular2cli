@@ -22,8 +22,6 @@ export class AuthguardService implements CanActivate {
       this.router.navigate(['/home']);
     }
     return isAccessAllowed;
-    //console.log(isAccessAllowed);
-    //return true;
   }
 
 }
