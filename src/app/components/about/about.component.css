@@ -4,4 +4,9 @@
 
 .about-panel-heading {
     background-color: #afbfbe;
+    font-size: 22px;
+}
+
+.about-panel-body {
+    font-size: 18px;
 }

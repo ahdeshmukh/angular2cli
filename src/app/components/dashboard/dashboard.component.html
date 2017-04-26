@@ -2,7 +2,7 @@
   <div class="container">
     <h2>Dashboard</h2>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="dashboard-rectangle">
           <div class="clearfix">
             <div class="pull-left">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="dashboard-rectangle">
           <div class="clearfix">
             <div class="pull-left">
@@ -48,7 +48,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="dashboard-rectangle">
           <div class="clearfix">
             <div class="pull-left">
@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="dashboard-rectangle">
           <div class="clearfix">
             <div class="pull-left">
@@ -102,7 +102,17 @@
         <google-chart class="chart" [data]="pieChartOptions"></google-chart>
       </div>
       <div class="col-md-6">
-        <google-chart class="chart" [data]="pieChartOptions"></google-chart>
+        <google-chart class="chart" [data]="lineChartOptions"></google-chart>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:20px;" class="container hidden-xs">
+    <div class="row">
+      <div class="col-md-6">
+        <google-chart class="chart" [data]="columnChartOptions"></google-chart>
+      </div>
+      <div class="col-md-6">
+        <google-chart class="chart" [data]="geoChartOptions"></google-chart>
       </div>
     </div>
   </div>
