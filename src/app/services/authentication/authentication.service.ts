@@ -12,47 +12,50 @@ export class AuthenticationService {
   login(userCredentials: any) {
     
     let currentUser: any;
-    let firstName: string, lastName: string, email: string;
+    let firstName: string, lastName: string, email: string, picture: string;
     
-    /*setTimeout(() => {
-      if(userCredentials.userRole === 'admin') {
-        firstName = 'Admin';
-        lastName = 'User';
-      } else {
-        let user: any;
-        this.userService.getUsers(1)
-        .subscribe(respUser => user = respUser);
-      }
-      
-      currentUser = {"firstName": "Admin", "lastName": "User", "role": userCredentials.userRole};
-      
-      localStorage.setItem('currentUser', currentUser);
-    }, 3000);*/
-
     let observable$ = new Observable(observer => {
       setTimeout(() => {
         if(userCredentials.userRole === 'admin') {
           firstName = 'Admin';
           lastName = 'User';
           email = 'admin@example.com';
+          picture = 'https://randomuser.me/api/portraits/thumb/men/74.jpg';
         } else {
-          // TODO - make a call to randouser.me and just get 1 record back
           firstName = 'Authenticated';
           lastName = 'User';
           email = 'auth@example.com';
+
+          let randomUsersArray = [
+            {"firstName":"Terry", "lastName":"Stultiens", "email":"terry.stultiens@example.com", "picture":"https://randomuser.me/api/portraits/thumb/men/70.jpg"},
+            {"firstName":"Ashley", "lastName":"Marshal", "email":"ashley.marshall@example.com", "picture":"https://randomuser.me/api/portraits/thumb/women/59.jpg"},
+            {"firstName":"Megan", "lastName":"Caldwell", "email":"megan.caldwell@example.com", "picture":"https://randomuser.me/api/portraits/thumb/women/56.jpg"},
+            {"firstName":"Isaiah", "lastName":"Terry", "email":"isaiah.terry@example.com", "picture":"https://randomuser.me/api/portraits/thumb/men/66.jpg"},
+            {"firstName":"Ray", "lastName":"Chavez", "email":"ray.chavez@example.com", "picture":"https://randomuser.me/api/portraits/thumb/men/12.jpg"},
+            {"firstName":"Jeanne", "lastName":"Foster", "email":"jeanne.foster@example.com", "picture":"https://randomuser.me/api/portraits/thumb/women/4.jpg"}
+          ];
+
+          let randomNum = Math.floor(Math.random() * 6);
+          let user = (randomUsersArray[randomNum]) ? randomUsersArray[randomNum] : randomUsersArray[0];
+          
+          firstName = user.firstName;
+          lastName = user.lastName;
+          email = user.email;
+          picture = user.picture;
+          
         }
         
         // TODO - create an object of type currentLoggedInUser which has firstName, lastName, email and role properties
-        currentUser = {"firstName": firstName, "lastName": lastName, "email": email, "role": userCredentials.userRole};
+        currentUser = {"firstName": firstName, "lastName": lastName, "email": email, "role": userCredentials.userRole, "picture": picture};
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
         observer.next(this.isUserLoggedIn());
-      }, 3000)
+      }, 2000)
     });
-    observable$.subscribe(
+    /*observable$.subscribe(
       value => value,
       err => {},
       () => console.log('this is the end')
-    );
+    );*/
     return observable$;
 
   }

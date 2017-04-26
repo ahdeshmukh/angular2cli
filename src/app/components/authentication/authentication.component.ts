@@ -26,6 +26,7 @@ export class AuthenticationComponent implements OnInit {
 
   ngOnInit() {
     this.imagesPath = this.utilityService.getImagesBasePath();
+    this.currentUser = this.getCurrentUser();
   }
 
   login(formValue: any) {
@@ -46,7 +47,7 @@ export class AuthenticationComponent implements OnInit {
   }
 
   getCurrentUser():any {
-    this.currentUser = this.authenticationService.getCurrentLoggedInUser();
+    return this.authenticationService.getCurrentLoggedInUser();
   }
 
   showLoginModal():void {
@@ -63,6 +64,12 @@ export class AuthenticationComponent implements OnInit {
 
   hideAccountModal():void {
     this.accountModal.hide();
+  }
+
+  getFirstCharNameCapitalized():string {
+    let user = this.getCurrentUser();
+    let firstChar = user.firstName.charAt(0).toUpperCase();
+    return firstChar;
   }
 
 }

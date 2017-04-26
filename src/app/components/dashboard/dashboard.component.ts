@@ -55,7 +55,7 @@ export class DashboardComponent implements OnInit {
       options: {
         'width': 555, 
         'height': 400,
-        'title': 'COMPAY PERFORMANCE',
+        'title': 'COMPANY PERFORMANCE',
         'titleTextStyle': {
           'fontSize': 18
         }

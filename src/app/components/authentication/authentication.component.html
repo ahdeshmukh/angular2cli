@@ -39,7 +39,7 @@
   </div>
   <div *ngIf=isUserLoggedIn()>
     <button type="button" class="btn btn-primary authentication-account-btn-circle" (click)="showAccountModal()">
-      <span class="authentication-login-circle-text">A</span>
+      <span class="authentication-login-circle-text">{{getFirstCharNameCapitalized()}}</span>
     </button>
     <div bsModal #accountModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
@@ -51,8 +51,11 @@
             </button>
           </div>
           <div class="modal-body clearfix">
-            <div style="margin-right: 20px;" class="pull-left"><img class="img-responsive img-circle" src="https://randomuser.me/api/portraits/thumb/women/56.jpg" /></div>
-            <div class="pull-left">Sarah Fraser</div>
+            <div style="margin-right: 20px;" class="pull-left"><img class="img-responsive img-circle" [src]="currentUser?.picture" /></div>
+            <div class="pull-left">
+              <div>{{currentUser?.firstName + ' ' + currentUser?.lastName}}</div>
+              <div>{{currentUser?.email}}</div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" (click)="logout()">LOG OUT</button>
