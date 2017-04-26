@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ng2-bootstrap/modal';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthguardService } from './services/authguard/authguard.service';
@@ -40,6 +41,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     FormsModule,
     HttpModule,
     ModalModule.forRoot(),
+    Ng2GoogleChartsModule,
     RouterModule.forRoot([
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
