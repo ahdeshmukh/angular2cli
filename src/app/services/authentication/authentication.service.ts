@@ -20,7 +20,6 @@ export class AuthenticationService {
           firstName = 'Admin';
           lastName = 'User';
           email = 'admin@example.com';
-          picture = 'https://randomuser.me/api/portraits/thumb/men/74.jpg';
         } else {
           firstName = 'Authenticated';
           lastName = 'User';
@@ -28,11 +27,11 @@ export class AuthenticationService {
 
           let randomUsersArray = [
             {"firstName":"Terry", "lastName":"Stultiens", "email":"terry.stultiens@example.com", "picture":"https://randomuser.me/api/portraits/thumb/men/70.jpg"},
-            {"firstName":"Ashley", "lastName":"Marshal", "email":"ashley.marshall@example.com", "picture":"https://randomuser.me/api/portraits/thumb/women/59.jpg"},
+            {"firstName":"Ashley", "lastName":"Marshal", "email":"ashley.marshall@example.com", "picture":"https://randomuser.me/api/portraits/thumb/women/21.jpg"},
             {"firstName":"Megan", "lastName":"Caldwell", "email":"megan.caldwell@example.com", "picture":"https://randomuser.me/api/portraits/thumb/women/56.jpg"},
             {"firstName":"Isaiah", "lastName":"Terry", "email":"isaiah.terry@example.com", "picture":"https://randomuser.me/api/portraits/thumb/men/66.jpg"},
             {"firstName":"Ray", "lastName":"Chavez", "email":"ray.chavez@example.com", "picture":"https://randomuser.me/api/portraits/thumb/men/12.jpg"},
-            {"firstName":"Jeanne", "lastName":"Foster", "email":"jeanne.foster@example.com", "picture":"https://randomuser.me/api/portraits/thumb/women/4.jpg"}
+            {"firstName":"Sarah", "lastName":"Foster", "email":"jeanne.foster@example.com", "picture":"https://randomuser.me/api/portraits/thumb/women/4.jpg"}
           ];
 
           let randomNum = Math.floor(Math.random() * 6);

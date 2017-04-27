@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Routes, RouterModule } from '@angular/router';
 import { ModalModule } from 'ng2-bootstrap/modal';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
-import { Routes, RouterModule } from '@angular/router';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 import { AuthguardService } from './services/authguard/authguard.service';
 import { AuthenticationService } from './services/authentication/authentication.service';
@@ -42,6 +43,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HttpModule,
     ModalModule.forRoot(),
     Ng2GoogleChartsModule,
+    ToastModule.forRoot(),
     RouterModule.forRoot([
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
